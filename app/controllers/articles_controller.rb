@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :set_article, only: %I[edit update show destroy]
 
   def index
     @articles = Article.all
@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = "#{@article.title} was successfully updated! Viola."
+      flash[:success] = "#{@article.title} was successfully updated! Viola."
       redirect_to article_path(@article)
     else
       render 'edit'
@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     # render plain: params[:article].inspect
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "#{@article.title} was successfully created!BRAVO!"
+      flash[:success] = "#{@article.title} was successfully created!BRAVO!"
       redirect_to article_path(@article)
     else
       render 'new'
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "#{@article.title} was successfully deleted."
+    flash[:danger] = "#{@article.title} was successfully deleted."
     redirect_to articles_path
   end
 
@@ -50,6 +50,4 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :description)
   end
-
-
 end
