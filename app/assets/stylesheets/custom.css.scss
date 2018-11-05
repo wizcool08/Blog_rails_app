@@ -26,6 +26,11 @@ $navbar-default-bg: black;
   border: none;
 }
 
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+
 .jumbotron {
   background-image: asset-url("bg_cb_leaf.jpg");
   background-size: cover;
@@ -44,6 +49,10 @@ $navbar-default-bg: black;
   font-family: cookie;
   font-style: italic;
   color: darkslategrey;
+}
+
+.description {
+  margin-top: 0;
 }
 
 .footer {
