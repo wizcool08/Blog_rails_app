@@ -51,6 +51,16 @@ $navbar-default-bg: black;
   color: darkslategrey;
 }
 
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.artile-body {
+  border-top: 1px solid #eaeaea;
+  padding: 15px 0;
+}
+
 .description {
   margin-top: 0;
 }
