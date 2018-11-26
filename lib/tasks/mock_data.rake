@@ -11,10 +11,12 @@ namespace :mock do
   private
   
   def create_mock_users
+    num = 0
     6.times do 
+      num +=1
       User.create!(
         username: Faker::Name.name,
-        email: Faker::Internet.email,
+        email: "test_0#{num}@gmail.com",
         password: 'qwer1234'
       )
     end

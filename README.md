@@ -1,11 +1,30 @@
 # README
 
+## Project Title
+
+This project is for beginners like myself who're interested to learn a new framework - Ruby on Rails by doing and creating a simple blog aka Wizcool's blog:)
+
+## Getting Started
+
+To fully delete and rebuild the DB
+
+```
+rake db:reset db:migrate
+```
+
+To fully reset the database and reload the current schema,
+
+```
+rake db:drop db db:create db:migrate
+```
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+- Ruby version
+  Ruby version is 2.5.1
 
 * System dependencies
 
