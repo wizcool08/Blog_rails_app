@@ -18,7 +18,6 @@ users = User.create!([
 ])
 puts '======COMPLETE Users Load======'
 
-
 #LOAD ARTICLES
 num = 0
 18.times do

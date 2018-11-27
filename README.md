@@ -18,6 +18,26 @@ To fully reset the database and reload the current schema,
 rake db:drop db db:create db:migrate
 ```
 
+## Deploying to Heroku
+
+To seed data to heroku
+
+```
+heroku run rake db:seed
+```
+
+To check the data inside your table, you can run the console by
+
+```
+heroku run rails c
+```
+
+Check if there is a data by running
+
+```
+User.count
+```
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
