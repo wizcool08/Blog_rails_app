@@ -19,6 +19,16 @@ rake db:drop db db:create db:migrate
 ```
 
 ## Deploying to Heroku
+To deploy to heroku, ensure you have commited your code to your git repo, then
+```
+git push heroku master
+```
+
+Then run any pending migrations, for e.g. update of new columns, if any
+
+```
+heroku run rake db:migrate
+```
 
 To seed data to heroku
 
