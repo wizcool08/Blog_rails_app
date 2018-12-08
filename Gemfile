@@ -33,6 +33,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 
 gem 'faker'
 
+gem 'rails-controller-testing'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
