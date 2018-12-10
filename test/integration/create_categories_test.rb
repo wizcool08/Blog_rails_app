@@ -18,7 +18,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     assert_match 'sports', response.body
   end
 
-  test 'invalid category submission results in redirect to new page' do
+  test 'invalid category submission results in failure' do
     sign_in_as(@user, 'password')
     get new_category_path
     assert_template 'categories/new'
@@ -27,5 +27,6 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     end
     assert_template 'categories/new'
     assert_select 'h2.panel-title'
+    assert_select 'div.panel-body'
   end
 end

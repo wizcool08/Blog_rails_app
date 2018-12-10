@@ -6,6 +6,7 @@ namespace :mock do
     puts "===================SEEDING DATABASE============================"
     create_mock_users
     create_mock_articles
+    create_mock_categories
   end
 
   private
@@ -20,7 +21,7 @@ namespace :mock do
         password: 'qwer1234'
       )
     end
-    puts 'COMPLETE'
+    puts 'COMPLETE_MOCK_USERS'
   end
 
   def create_mock_articles
@@ -33,6 +34,17 @@ namespace :mock do
         user_id: rand(1..6)
       )
     end
-    puts 'COMPLETE'
+    puts 'COMPLETE_MOCK_ARTICLES'
+  end
+
+  def create_mock_categories
+    num = 0
+    11.times do
+      num +=1
+      Category.create!(
+        name: "Cat_0#{num}"
+      )
+    end
+    puts 'COMPLETE_MOCK_CATEGORIES'
   end
 end
