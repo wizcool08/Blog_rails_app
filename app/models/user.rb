@@ -11,6 +11,15 @@ class User < ApplicationRecord
                     length: { maximum: 105 },
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
-  validates :password, length: { minimum: 5 }
   has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
+
+  # Returns the hash digest of the given string.
+  # cost param determines the computational cost to calculate the hash. High cost makes it
+  # computationally intractable to use the hash to determine the original password.
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
 end
